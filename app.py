@@ -16,7 +16,7 @@ import signal
 import sys
 from types import FrameType
 
-from flask import Flask, render_template
+from flask import Flask
 
 from utils.logging import logger
 
@@ -31,7 +31,7 @@ def hello() -> str:
     # https://cloud.google.com/run/docs/logging#correlate-logs
     logger.info("Child logger with trace Id.")
 
-    render_template("index.html")
+    return "Hello, World!"
 
 
 def shutdown_handler(signal_int: int, frame: FrameType) -> None:
